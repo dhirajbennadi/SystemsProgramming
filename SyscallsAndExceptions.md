@@ -27,3 +27,30 @@ An exception is a transfer of control to the OS in response to some event (i.e c
 
 ## 4 Types of Exceptions
 * Classes of Exceptions
+    - Interrupts
+    - Traps
+    - Faults
+    - Aborts
+
+Exceptions are like procedure calls but the difference is as follows
+1. Can return either to the current instruction or the following instruction
+2. Run in kernel mode
+3. Save information about the process we will need when we return from the kernel
+4. Everything is saved on the kernel stack
+
+### Asynchronous Exceptions
+Caused by events external to the currently running instruction
+- Indicated by setting the processor's interrupt pin
+- Handler returns to the next instruction
+- Can also be previously set timer firing on the CPU
+
+Examples : I/O Interrupts, Hard Reset Interrupt, Soft Reset Interrupt
+
+### Traps: Synchronous, Intentional Exceptions
+* Caused by events that occur as a result of executing an instruction
+
+Examples : System Calls, Breakpoint traps, Special Instructions
+
+## Synchronous Exceptions
+* Faults - Might fail or not, kernel needs to check
+* Aborts - Always fails
