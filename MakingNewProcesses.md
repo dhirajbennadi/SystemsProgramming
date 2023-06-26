@@ -15,7 +15,26 @@ When strace command with the output of the program is executed, the trace shows 
 ## Fork
 * 2 processes share the same execution context. Identical Copies.
 * Share memory layout
+* After forking, the OS decides which process to run next
+* Clone is a replacement of fork
 
-After forking, the OS decides which process to run next
+What does fork do?
+* Receives own copy of :
+    * memory
+    * open files
+    * filesystem state
+    * signal handlers
+* After forking, the OS decides which process to run next
 
+### 
+Summary of System Calls : strace -c ./output
 
+What does spawn do?
+* Receives own copy of :
+    * ~~memory~~
+    * open files
+    * filesystem state
+    * signal handlers
+* ~~After forking, the OS decides which process to run next~~
+* Parent sleeps until child execv's or exit()
+* Edits to one show up in other
