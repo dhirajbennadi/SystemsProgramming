@@ -21,3 +21,18 @@ Why are Signals needed?
 * At some point, the prcess switches into kernel mode(system call, context switch, etc)
 * When the process switches back to user mode, the kernel checks for pending signals
 * Kernel forces the process to recive any pending signals
+
+### Process Groups
+
+### Jobs
+* Shell
+* Foreground
+* Background
+
+### Errno
+Errno is a global variable in the C Standard library to keep track of the error state of the process
+
+### Signal Concepts
+* Kernel will maintain pending and blocked bit vectors in the context of each process
+    * pending - represents the set of pending signals
+    * blocked - represents the set of blocked signals
