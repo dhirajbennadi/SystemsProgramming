@@ -22,16 +22,6 @@ CPU -> MMU -> Physical Memory
 * Independent of location in Physical Memory
 * Conversion of logical to physical memory is done by Hardware. But the hardware is controlled by Page Tables which in turn is controlled by Operating Systems
 
-## Page Table
-Array of page table entries (PTEs) that maps virtual pages to physical pages
 
-The PTE contains the information of a ~valid bit~ and the address the process is currently located at. If the process is available in the DRAM, then the valid bit is 1 or its 0, which indicates that the process is on the disk.
-Remember the ~Page Hit~ concept over here.
-
-## Page Hit
-Reference to VM word that is in physical memory (DRAM cache hit)
-
-## Page Fault
-Reference to VM word that is not in physical memory (DRAM cache miss)
 
 
