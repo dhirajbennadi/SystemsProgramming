@@ -27,4 +27,31 @@ DNS existing as an application on top of Transport Layer
 1. Two processes on different computer exchanging bytes
 2. **Multiplex** different application-level messages
 3. What **Abstraction** to expose to the application developer via API?
-4. How to ma
+4. How to **manage** realities(problems) of the underlying IP network, like dropped packets or out-of-delivery
+
+TCP, UDP -> Port Numbers 
+
+##### Network
+1. Routing
+2. Name
+3. Resource Management
+
+##### Link Layer
+1. Framing -> When does a message begin, end
+2. Forwarding -? How do I store and send these bytes to receiver
+3. Media Access Control -> If multiple senders want to send on a shared channel, how do they coordinate
+4. Detecting errors -> Sharing a physical medium can often result in bit error, detect them at this level
+
+
+### Best Effort
+* Avoids Congestion Collapse
+
+#### Reliable ByteStreams
+1. TCP is the main protocol that provides reliable transport
+2. Splits long streams of bytes up into individual messages, labels these bytes with their offsets
+3. Sends acknowledgements (based on offsets) then bytes are received
+4. Resends messages when its determined that they are dropped
+5. Slows down when it detects congestion
+
+
+### Scalable
