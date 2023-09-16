@@ -55,3 +55,8 @@ TCP, UDP -> Port Numbers
 
 
 ### Scalable
+
+#### Measure of Success
+1. Bandwidth
+2. Delay/Latency
+3. Error Rate
